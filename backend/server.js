@@ -14,7 +14,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: ["http://localhost:5173",
-    "https://task-manager-app-one-snowy.vercel.app/"
+    "https://task-manager-app-one-snowy.vercel.app"
     ],
     credentials: true
   })
