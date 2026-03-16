@@ -77,6 +77,18 @@ Security
 
 ---
 
+## 🌐 Live Demo
+
+Frontend:
+https://task-manager-app-one-snowy.vercel.app
+
+Backend API:
+https://task-manager-backend-whwm.onrender.com
+
+GitHub Repository:
+https://github.com/DiptanshuVishwa/task-manager-app
+
+
 ## 📁 Project Structure
 
 ```
