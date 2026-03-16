@@ -77,8 +77,9 @@ Security
 
 ---
 
-## 📦 Project Structure
+## 📁 Project Structure
 
+```
 task-manager-app
 │
 ├── backend
@@ -96,8 +97,7 @@ task-manager-app
 │   └── App.jsx
 │
 └── README.md
-
----
+```
 
 ## ⚙️ Local Setup
 
