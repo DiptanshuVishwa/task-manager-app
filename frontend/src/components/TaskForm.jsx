@@ -1,26 +1,33 @@
 import { useState } from "react";
 import API from "../services/api";
 
-function TaskForm() {
+function TaskForm({ fetchTasks }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("pending");
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await API.post("/tasks", {
-        title,
-        description,
-        status
-      });
-      setTitle("");
-      setDescription("");
-      setStatus("pending");
-      window.location.reload();
-    } catch (error) {
-      alert("Error creating task");
-    }
-  };
+  e.preventDefault();
+
+  try {
+
+    await API.post("/tasks", {
+      title,
+      description,
+      status
+    });
+
+    alert("Task created");
+
+    setTitle("");
+    setDescription("");
+    setStatus("pending");
+
+    fetchTasks();
+
+  } catch (error) {
+    alert("Error creating task");
+  }
+};
 
   return (
     <div className="bg-white p-6 rounded-lg shadow">

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import API from "../services/api";
 
-function TaskList() {
+function TaskList({ refresh }) {
 
   const [tasks, setTasks] = useState([]);
   const [search, setSearch] = useState("");
@@ -24,9 +24,9 @@ function TaskList() {
     }
   };
 
-  useEffect(() => {
-    fetchTasks();
-  }, [page, search, status]);
+ useEffect(() => {
+  fetchTasks();
+}, [page, search, status, refresh]);
 
 
   const deleteTask = async (id) => {
