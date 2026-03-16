@@ -13,7 +13,6 @@ function TaskForm() {
         description,
         status
       });
-      alert("Task created");
       setTitle("");
       setDescription("");
       setStatus("pending");
