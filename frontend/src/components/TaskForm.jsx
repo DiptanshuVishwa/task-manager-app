@@ -9,22 +9,24 @@ function TaskForm({ fetchTasks }) {
   e.preventDefault();
 
   try {
-
-    await API.post("/tasks", {
+    const res = await API.post("/tasks", {
       title,
       description,
       status
     });
 
-    alert("Task created");
+    if (res.status === 201 || res.status === 200) {
+      alert("Task created");
 
-    setTitle("");
-    setDescription("");
-    setStatus("pending");
+      setTitle("");
+      setDescription("");
+      setStatus("pending");
 
-    fetchTasks();
+      fetchTasks();
+    }
 
   } catch (error) {
+    console.log(error.response);
     alert("Error creating task");
   }
 };
